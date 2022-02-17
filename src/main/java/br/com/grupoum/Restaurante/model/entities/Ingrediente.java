@@ -37,8 +37,13 @@ public class Ingrediente {
 		this.nome = nome;
 		this.unidadeDeMedida = unidadeDeMedida;
 		this.custo = custo;
+<<<<<<< Updated upstream
 		this.quantidadeEstoque = quantidadeEstoque;
 		this.unidadeMedida = unidadeMedida;
+=======
+		this.quantidadeDeEstoque = quantidadeEstoque;
+		this.setUnidadeMedida(unidadeMedida);
+>>>>>>> Stashed changes
 	}
 
 
@@ -81,6 +86,14 @@ public class Ingrediente {
 
 	public void setQuantidadeEstoque(Double quantidadeEstoque) {
 		this.quantidadeEstoque = quantidadeEstoque;
+	}
+
+	public String getUnidadeMedida() {
+		return unidadeMedida;
+	}
+
+	public void setUnidadeMedida(String unidadeMedida) {
+		this.unidadeMedida = unidadeMedida;
 	}
 	
 }
