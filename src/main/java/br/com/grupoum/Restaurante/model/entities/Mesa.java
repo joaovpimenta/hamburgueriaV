@@ -23,7 +23,7 @@ public class Mesa {
 //    // Uma mesa pode possuir vários produtos
 //    @OneToMany
 //    @JoinColumn(name = "id_produtos")
-//    private List<Produtos> produtos;
+//    private List<Produto> produtos;
 
     public Mesa() {
     }
