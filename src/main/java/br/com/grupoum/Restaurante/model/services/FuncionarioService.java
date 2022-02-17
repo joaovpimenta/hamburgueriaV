@@ -15,14 +15,14 @@ public class FuncionarioService {
     FuncionarioRepository repository;
 
 
-    // Validação
-
-
     // Create/Update a Funcionario
     public boolean createFuncionario(Funcionario funcionario){
         if(funcionario != null){
-            repository.save(funcionario);
-            return true;
+            Funcionario novoFuncionario = findFuncionarioByLogin(funcionario.getLogin());
+            if(novoFuncionario == null) {
+                repository.save(funcionario);
+                return true;
+            }
         }
         return false;
     }
@@ -47,6 +47,12 @@ public class FuncionarioService {
     public List<Funcionario> findAllFuncionarios(){
         List<Funcionario> funcionarios = repository.findAll();
         return funcionarios;
+    }
+
+    //
+    public Funcionario findFuncionarioByLogin(String login){
+        Funcionario funcionarioLogin = repository.findByLogin(login);
+        return funcionarioLogin;
     }
 
 }

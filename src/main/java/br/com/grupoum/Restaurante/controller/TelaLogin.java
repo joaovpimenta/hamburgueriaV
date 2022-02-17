@@ -1,7 +1,7 @@
 package br.com.grupoum.Restaurante.controller;
 
-import br.com.grupoum.Restaurante.model.entities.Cliente;
-import br.com.grupoum.Restaurante.model.services.ClienteService;
+import br.com.grupoum.Restaurante.model.entities.Funcionario;
+import br.com.grupoum.Restaurante.model.services.FuncionarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class TelaLogin {
 
 	@Autowired
-	ClienteService clienteService;
+	FuncionarioService funcionarioService;
 	
 	@GetMapping("/tela-login")
 	public String telaLogin(ModelMap model) {
@@ -27,9 +27,9 @@ public class TelaLogin {
 	public String fazerLogin(String login, String senha){
 		System.out.println("Login:"+login);
 		System.out.println(senha);
-		Cliente cliente = clienteService.findClienteByLogin(login);
-		if(cliente != null){
-			if(cliente.getSenha().equals(senha)){
+		Funcionario funcionario = funcionarioService.findFuncionarioByLogin(login);
+		if(funcionario != null){
+			if(funcionario.getSenha().equals(senha)){
 				return "redirect:/cardapio";
 			}
 		}
