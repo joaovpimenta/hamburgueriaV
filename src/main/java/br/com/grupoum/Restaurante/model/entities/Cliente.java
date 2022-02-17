@@ -1,14 +1,18 @@
 package br.com.grupoum.Restaurante.model.entities;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Entity
-@Table(name = "TB_CLIENTE")
 public class Cliente extends Pessoa{
-	
-	@Column(name = "Mesa")
+
+	@OneToOne
+	@JoinColumn(name = "Mesa")
 	private Mesa mesa;
-	@Column(name = "Pedido")
+	@OneToOne
+	@JoinColumn(name = "Pedido")
 	private Pedido pedido;
 	
 	public Cliente() {

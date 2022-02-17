@@ -18,7 +18,7 @@ public class ApplicationController {
     public String getHome(){
 
 
-        return "home";
+        return "redirect:/home";
     }
 
 }

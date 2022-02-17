@@ -3,12 +3,7 @@ package br.com.grupoum.Restaurante.model.entities;
 
 import java.math.BigDecimal;
 import java.util.List;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "TB_PEDIDO")
@@ -22,6 +17,7 @@ public class Pedido {
 	private String nomeProduto;
 	@Column(name = "valor")
 	private BigDecimal valor;
+	@OneToMany
 	@Column(name = "nomeProduto")
 	private List<Produto> listaProdutos;
 	

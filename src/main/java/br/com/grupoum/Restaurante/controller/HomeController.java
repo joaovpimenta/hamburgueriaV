@@ -10,8 +10,8 @@ public class HomeController {
 	@GetMapping("/home")
 	public String home() {
 		
-			
-		return "home";
+		//TODO Mudar depois que outras página existirem
+		return "tela-login";
 	}
 	
 	
