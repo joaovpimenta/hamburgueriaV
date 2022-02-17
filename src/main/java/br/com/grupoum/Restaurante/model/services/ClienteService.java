@@ -49,4 +49,10 @@ public class ClienteService {
         return clientes;
     }
 
+    //
+    public Cliente findClienteByLogin(String login){
+        Cliente clienteLogin = repository.findByLogin(login);
+        return clienteLogin;
+    }
+
 }
