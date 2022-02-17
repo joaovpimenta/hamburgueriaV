@@ -22,13 +22,13 @@ public class Produto {
 	private String nomeProduto;
 	private BigDecimal valor;
 	@Column(name = "ingredientes")
-	private List<Ingrediente> ingredientes;
+	private List<Produto> ingredientes;
 	
 	public Produto() {
 		
 	}
 	
-	public Produto(Long id, String nomeProduto, BigDecimal valor, List<Ingrediente> ingredientes) {
+	public Produto(Long id, String nomeProduto, BigDecimal valor, List<Produto> ingredientes) {
 		this.id = id;
 		this.nomeProduto = nomeProduto;
 		this.valor = valor;
@@ -59,11 +59,11 @@ public class Produto {
 		this.valor = valor;
 	}
 
-	public List<Ingrediente> getIngredientes() {
+	public List<Produto> getIngredientes() {
 		return ingredientes;
 	}
 
-	public void setIngredientes(List<Ingrediente> ingredientes) {
+	public void setIngredientes(List<Produto> ingredientes) {
 		this.ingredientes = ingredientes;
 	}
 	
