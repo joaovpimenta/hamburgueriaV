@@ -1,10 +1,5 @@
 # hamburgueriaV
 
-## Esse é um teste do code share kjdhklkfj.adkçfajsfkaskjlaskldjasldk
+## Esse é um projeto para o Fourcamp Java - 2021
 
-fajlskdjlaaskldfjakf
-falshfak
-
-
-
-E nois
+O objetivo é aplicar os conhecimentos adquiridos de Java orientado a objetos, Spring e Thymeleaf.
