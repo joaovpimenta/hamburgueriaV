@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+</head>
+<body>
+
+<section class="vh-100" style="background-color: #440000;">
+
+    <div class="vw-100 " style="background-color: #440000">
+
+        <img src="https://cdn.discordapp.com/attachments/926113961596833792/943985109604900874/top.png"  style="width: 1535px; height:200px ;">
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm ml-1  p-3 text-light bg-dark">
+                <h3>Comidas</h3>
+                <th:block th:each="lista : ${lista}">
+
+                    <div class="row" style="border: solid 1px;">
+                        <img src="https://images.unsplash.com/photo-1610970878459-a0e464d7592b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1224&q=80" style="width: 150px; height:94px ;">
+                        <div style="margin: 10px;">
+                        <span th:text="${lista.nomeProduto}"></span>
+                        <br>
+                        <br>
+                        R$<span th:text="${lista.valor}"></span>
+                        </div>
+                    </div>
+
+
+                </th:block>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

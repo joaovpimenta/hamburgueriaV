@@ -1,5 +1,6 @@
 package br.com.grupoum.Restaurante.model.services;
 
+import br.com.grupoum.Restaurante.model.entities.Gerente;
 import br.com.grupoum.Restaurante.model.entities.Mesa;
 import br.com.grupoum.Restaurante.model.repositories.MesaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,6 +49,11 @@ public class MesaService {
     public List<Mesa> findAllMesas(){
         List<Mesa> mesas = repository.findAll();
         return mesas;
+    }
+
+    public Mesa findMesaByLogin(Integer posicao){
+        Mesa mesaLogin = repository.findByPosicao(posicao);
+        return mesaLogin;
     }
 
 }
