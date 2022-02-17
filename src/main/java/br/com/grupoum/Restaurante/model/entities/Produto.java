@@ -1,13 +1,5 @@
 package br.com.grupoum.Restaurante.model.entities;
 
-<<<<<<< Updated upstream
-import antlr.collections.List;
-
-public class Pedido {
-	
-	List<Produto> produto;
-
-=======
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -19,25 +11,24 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "TB_PEDIDO")
-public class Pedido {
+@Table(name = "TB_PRODUTO")
+public class Produto {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_pedido")
+	@Column(name = "id_produto")
 	private Long id;
 	@Column(name = "nomeProduto")
 	private String nomeProduto;
-	@Column(name = "valor")
 	private BigDecimal valor;
-	@Column(name = "nomeProduto")
+	@Column(name = "ingredientes")
 	private List<ItemIngredientes> ingredientes;
 	
-	public Pedido() {
+	public Produto() {
 		
 	}
 	
-	public Pedido(Long id, String nomeProduto, BigDecimal valor, List<ItemIngredientes> ingredientes) {
+	public Produto(Long id, String nomeProduto, BigDecimal valor, List<ItemIngredientes> ingredientes) {
 		this.id = id;
 		this.nomeProduto = nomeProduto;
 		this.valor = valor;
@@ -76,5 +67,4 @@ public class Pedido {
 		this.ingredientes = ingredientes;
 	}
 	
->>>>>>> Stashed changes
 }
