@@ -1,6 +1,8 @@
 package br.com.grupoum.Restaurante.model.services;
 
 import br.com.grupoum.Restaurante.model.entities.Gerente;
+import br.com.grupoum.Restaurante.model.entities.Gerente;
+import br.com.grupoum.Restaurante.model.repositories.GerenteRepository;
 import br.com.grupoum.Restaurante.model.repositories.GerenteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,14 +17,14 @@ public class GerenteService {
     GerenteRepository repository;
 
 
-    // Validação
-
-
     // Create/Update a Gerente
     public boolean createGerente(Gerente gerente){
         if(gerente != null){
-            repository.save(gerente);
-            return true;
+            Gerente novoGerente = findGerenteByLogin(gerente.getLogin());
+            if(novoGerente == null) {
+                repository.save(gerente);
+                return true;
+            }
         }
         return false;
     }
@@ -47,6 +49,12 @@ public class GerenteService {
     public List<Gerente> findAllGerentes(){
         List<Gerente> gerentes = repository.findAll();
         return gerentes;
+    }
+
+    //
+    public Gerente findGerenteByLogin(String login){
+        Gerente gerenteLogin = repository.findByLogin(login);
+        return gerenteLogin;
     }
 
 }
