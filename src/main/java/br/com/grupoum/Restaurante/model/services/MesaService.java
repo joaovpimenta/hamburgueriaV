@@ -44,7 +44,7 @@ public class MesaService {
         return mesa.orElse(null);
     }
 
-    // Read all Mesas
+    // Read All Mesas
     public List<Mesa> findAllMesas(){
         List<Mesa> mesas = repository.findAll();
         return mesas;
