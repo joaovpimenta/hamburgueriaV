@@ -1,4 +1,4 @@
-# hamburgueriaV
+# HamburgueriaV
 
 ## Esse é um projeto para o Fourcamp Java - 2021
 
