@@ -23,17 +23,17 @@ public class Pedido {
 	@Column(name = "valor")
 	private BigDecimal valor;
 	@Column(name = "nomeProduto")
-	private List<ItemIngredientes> ingredientes;
+	private List<Produto> listaProdutos;
 	
 	public Pedido() {
 		
 	}
 	
-	public Pedido(Long id, String nomeProduto, BigDecimal valor, List<ItemIngredientes> ingredientes) {
+	public Pedido(Long id, String nomeProduto, BigDecimal valor, List<Produto> listaProdutos) {
 		this.id = id;
 		this.nomeProduto = nomeProduto;
 		this.valor = valor;
-		this.ingredientes = ingredientes;
+		this.listaProdutos = listaProdutos;
 	}
 
 	public Long getId() {
@@ -60,12 +60,11 @@ public class Pedido {
 		this.valor = valor;
 	}
 
-	public List<ItemIngredientes> getIngredientes() {
-		return ingredientes;
+	public List<Produto> getListaProdutos() {
+		return listaProdutos;
 	}
 
-	public void setIngredientes(List<ItemIngredientes> ingredientes) {
-		this.ingredientes = ingredientes;
+	public void setListaProdutos(List<Produto> listaProdutos) {
+		this.listaProdutos = listaProdutos;
 	}
-
 }

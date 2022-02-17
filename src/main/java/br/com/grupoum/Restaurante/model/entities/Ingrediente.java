@@ -25,20 +25,17 @@ public class Ingrediente {
 	private BigDecimal custo;
 	@Column(name = "quantidade_estoque")
 	private Double quantidadeDeEstoque;
-	private String unidadeMedida;
 	
 	public Ingrediente() {
 		
 	}
 
-	public Ingrediente(Long id, String nome, Enum unidadeDeMedida, BigDecimal custo, Double quantidadeEstoque,
-			String unidadeMedida) {
+	public Ingrediente(Long id, String nome, Enum unidadeDeMedida, BigDecimal custo, Double quantidadeEstoque) {
 		this.id = id;
 		this.nome = nome;
 		this.unidadeDeMedida = unidadeDeMedida;
 		this.custo = custo;
 		this.quantidadeDeEstoque = quantidadeEstoque;
-		this.unidadeMedida = unidadeMedida;
 	}
 
 
