@@ -1,16 +1,8 @@
 package br.com.grupoum.Restaurante.model.entities;
 
-<<<<<<< Updated upstream
-import antlr.collections.List;
 
-public class Pedido {
-	
-	List<Produto> produto;
-
-=======
 import java.math.BigDecimal;
 import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -75,6 +67,5 @@ public class Pedido {
 	public void setIngredientes(List<ItemIngredientes> ingredientes) {
 		this.ingredientes = ingredientes;
 	}
-	
->>>>>>> Stashed changes
+
 }
