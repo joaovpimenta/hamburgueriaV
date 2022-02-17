@@ -5,6 +5,7 @@ import br.com.grupoum.Restaurante.model.repositories.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -44,8 +45,8 @@ public class ProdutoService {
     }
 
     // Read All Produtos
-    public List<Produto> findAllProdutos(){
-        List<Produto> produtos = repository.findAll();
+    public ArrayList<Produto> findAllProdutos(){
+        ArrayList<Produto> produtos = (ArrayList<Produto>) repository.findAll();
         return produtos;
     }
 

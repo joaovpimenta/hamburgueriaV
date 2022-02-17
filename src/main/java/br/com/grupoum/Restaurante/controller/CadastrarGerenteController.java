@@ -15,7 +15,7 @@ public class CadastrarGerenteController {
     GerenteService gerenteService;
 
     @GetMapping("/cadastrar-gerente")
-    public String telaLogin(ModelMap model) {
+    public String telaLoginGerente(ModelMap model) {
         String login = "";
         String senha = "";
         String nome = "";
@@ -26,7 +26,7 @@ public class CadastrarGerenteController {
     }
 
     @PostMapping(value = "/cadastrargerente")
-    public String fazerLogin(String nome, String login, String senha){
+    public String fazerLoginGerente(String nome, String login, String senha){
         Gerente gerente = new Gerente();
         gerente.setLogin(login);
         gerente.setNome(nome);

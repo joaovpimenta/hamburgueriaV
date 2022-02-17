@@ -18,8 +18,9 @@ public class FuncionarioService {
     // Create/Update a Funcionario
     public boolean createFuncionario(Funcionario funcionario){
         if(funcionario != null){
-            Funcionario novoFuncionario = findFuncionarioByLogin(funcionario.getLogin());
-            if(novoFuncionario == null) {
+            GerenteService service = new GerenteService();
+
+            if(!existFuncionarioByLogin(funcionario.getLogin())) {
                 repository.save(funcionario);
                 return true;
             }
@@ -53,6 +54,11 @@ public class FuncionarioService {
     public Funcionario findFuncionarioByLogin(String login){
         Funcionario funcionarioLogin = repository.findByLogin(login);
         return funcionarioLogin;
+    }
+
+    public boolean existFuncionarioByLogin(String login){
+        Funcionario novoFuncionario = findFuncionarioByLogin(login);
+        return novoFuncionario != null;
     }
 
 }

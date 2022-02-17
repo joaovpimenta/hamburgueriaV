@@ -1,5 +1,6 @@
 package br.com.grupoum.Restaurante.model.services;
 
+import br.com.grupoum.Restaurante.model.entities.Funcionario;
 import br.com.grupoum.Restaurante.model.entities.Gerente;
 import br.com.grupoum.Restaurante.model.entities.Gerente;
 import br.com.grupoum.Restaurante.model.repositories.GerenteRepository;
@@ -20,8 +21,8 @@ public class GerenteService {
     // Create/Update a Gerente
     public boolean createGerente(Gerente gerente){
         if(gerente != null){
-            Gerente novoGerente = findGerenteByLogin(gerente.getLogin());
-            if(novoGerente == null) {
+            FuncionarioService service = new FuncionarioService();
+            if(!existGerenteByLogin(gerente.getLogin())) {
                 repository.save(gerente);
                 return true;
             }
@@ -55,6 +56,11 @@ public class GerenteService {
     public Gerente findGerenteByLogin(String login){
         Gerente gerenteLogin = repository.findByLogin(login);
         return gerenteLogin;
+    }
+
+    public boolean existGerenteByLogin(String login){
+        Gerente novoGerente = findGerenteByLogin(login);
+        return novoGerente != null;
     }
 
 }
