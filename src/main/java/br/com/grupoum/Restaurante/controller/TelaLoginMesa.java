@@ -43,7 +43,7 @@ public class TelaLoginMesa {
 			if(mesa.getSenha().equals(senha)){
 				ArrayList<Produto> lista = produtoService.findAllProdutos();
 				model.addAttribute("lista",lista);
-				return "/cardapio";
+				return "/inicio-cardapio";
 			}
 		}
 		return "redirect:/tela-login-mesa";
