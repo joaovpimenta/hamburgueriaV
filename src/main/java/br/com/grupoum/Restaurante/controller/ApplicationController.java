@@ -16,7 +16,7 @@ public class ApplicationController {
 
     @GetMapping(value = "/")
     public String getHome(){
-        return "redirect:/home";
+        return "redirect:/tela-login";
     }
 
 }

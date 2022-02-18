@@ -30,6 +30,7 @@ public class TelaLogin {
 
 	@Autowired
 	ProdutoService produtoService;
+
 	
 	@GetMapping("/tela-login")
 	public String telaLogin(ModelMap model) {
@@ -50,18 +51,20 @@ public class TelaLogin {
 		}
 		Funcionario funcionario = funcionarioService.findFuncionarioByLogin(login);
 		Gerente gerente = gerenteService.findGerenteByLogin(login);
+		if(gerente != null){
+			System.out.println("É Gerente!!");
+			if(gerente.getSenha().equals(senha)){
+				RestauranteApplication.pessoaLogada = gerente;
+				RestauranteApplication.nivel = 2;
+				return "redirect:/mesas";
+			}
+		}
 		if(funcionario != null){
+			System.out.println("É Funcionario!!");
 			if(funcionario.getSenha().equals(senha)){
 				RestauranteApplication.pessoaLogada = funcionario;
 				RestauranteApplication.nivel = 1;
-				return "redirect:/cardapio";
-			}
-		}
-		if(gerente != null){
-			if(gerente.getSenha().equals(senha)){
-				RestauranteApplication.pessoaLogada = funcionario;
-				RestauranteApplication.nivel = 2;
-				return "redirect:/cardapio";
+				return "redirect:/funcionario";
 			}
 		}
 		return "redirect:/tela-login";
