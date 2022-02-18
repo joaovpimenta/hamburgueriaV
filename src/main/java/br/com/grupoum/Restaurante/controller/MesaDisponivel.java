@@ -1,5 +1,6 @@
 package br.com.grupoum.Restaurante.controller;
 
+import br.com.grupoum.Restaurante.RestauranteApplication;
 import br.com.grupoum.Restaurante.model.entities.Mesa;
 import br.com.grupoum.Restaurante.model.services.MesaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,6 +55,9 @@ public class MesaDisponivel {
 		if(mesa1 != null && mesa1.getStatus()){
 			mesa1.setStatus(false);
 			service.createMesa(mesa1);
+		}
+		if(RestauranteApplication.nivel == 1){
+			return "redirect:/funcionario";
 		}
 		return "redirect:/mesas";
 	}
