@@ -4,11 +4,11 @@
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Web 1920 – 2</title>
+<title>Inicio Cardapio</title>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 	<style id="applicationStylesheet" type="text/css">
 	.mediaViewInfo {
-		--web-view-name: Web 1920 – 2;
+		--web-view-name: Inicio Cardapio;
 		--web-view-id: Web_1920__2;
 		--web-scale-on-resize: true;
 		--web-enable-deep-linking: true;
@@ -33,7 +33,7 @@
 >>>>>>> origin/Arthur_Branch
 		background-color: rgba(255,255,255,1);
 		overflow: hidden;
-		--web-view-name: Web 1920 – 2;
+		--web-view-name: Inicio Cardapio;
 		--web-view-id: Web_1920__2;
 		--web-scale-on-resize: true;
 		--web-enable-deep-linking: true;
@@ -82,9 +82,43 @@
 		</path>
 	</svg>
 	<img id="LogoPronto" src="/LogoPronto.png">
-
+	<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+		<div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+			<div class="toast-header">
+				<img src="..." class="rounded me-2" alt="...">
+				<strong class="me-auto">Bootstrap</strong>
+				<small>11 mins ago</small>
+				<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+			</div>
+			<option value="top-0 start-0">Top left</option>
+			<div class="toast-body">
+				Você deseja liberar essa mesa?
+				<div class="mt-2 pt-2 border-top">
+					<button type="button" class="btn btn-primary btn-sm">Continuar</button>
+					<button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="toast">Cancelar</button>
+				</div>
+			</div>
+		</div>
+	</div>
 	<form th:action="@{/redirectbutton}" method="POST">
-
+		<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+			<div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+				<div class="toast-header">
+					<img src="..." class="rounded me-2" alt="...">
+					<strong class="me-auto">Bootstrap</strong>
+					<small>11 mins ago</small>
+					<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+				</div>
+				<option value="top-0 start-0">Top left</option>
+				<div class="toast-body">
+					Você deseja liberar essa mesa?
+					<div class="mt-2 pt-2 border-top">
+						<button type="button" class="btn btn-primary btn-sm">Continuar</button>
+						<button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="toast">Cancelar</button>
+					</div>
+				</div>
+			</div>
+		</div>
 		<div class="cardapio">
 			<input class="btn btn-dark btn-lg btn-block" type="submit" value="Cardápio" style="color: #D7FB08; background-color: rgba(120,0,0,1)">
 		</div>
