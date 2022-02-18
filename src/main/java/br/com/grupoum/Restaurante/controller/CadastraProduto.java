@@ -34,7 +34,7 @@ public class CadastraProduto {
 	public String cadastrarProduto(String nome, String preco){
 		Produto produto = new Produto();
 		produto.setNomeProduto(nome);
-		Integer precototal = Integer.valueOf(preco);
+		Double precototal = Double.valueOf(preco);
 		produto.setValor(new BigDecimal(precototal));
 		service.createProduto(produto);
 		return "redirect:/mesas";
