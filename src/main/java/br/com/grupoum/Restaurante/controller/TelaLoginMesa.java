@@ -43,7 +43,7 @@ public class TelaLoginMesa {
 			if(mesa.getSenha().equals(senha)){
 				mesa.setStatus(true);
 				service.createMesa(mesa);
-				return "/redirect";
+				return "redirect:/redirect";
 			}
 		}
 		return "redirect:/tela-login-mesa";
