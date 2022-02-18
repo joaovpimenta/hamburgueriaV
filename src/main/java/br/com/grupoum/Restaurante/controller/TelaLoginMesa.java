@@ -58,7 +58,7 @@ public class TelaLoginMesa {
 	public String redirect(ModelMap model){
 		ArrayList<Produto> lista = produtoService.findAllProdutos();
 		model.addAttribute("lista",lista);
-		return "/cardapio";
+				return "/cardapio";
 	}
 
 	@GetMapping(value = "/cardapio")
