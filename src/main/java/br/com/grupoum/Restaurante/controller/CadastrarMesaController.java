@@ -32,6 +32,7 @@ public class CadastrarMesaController {
         Mesa mesa = new Mesa();
         mesa.setPosicao(numero);
         mesa.setSenha(senha);
+        mesa.setStatus(false);
         mesaService.createMesa(mesa);
 
         return "redirect:/tela-login";

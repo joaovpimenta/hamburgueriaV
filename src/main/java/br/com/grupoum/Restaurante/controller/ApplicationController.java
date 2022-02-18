@@ -16,8 +16,6 @@ public class ApplicationController {
 
     @GetMapping(value = "/")
     public String getHome(){
-
-
         return "redirect:/home";
     }
 
