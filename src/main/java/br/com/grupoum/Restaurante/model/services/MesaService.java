@@ -39,6 +39,16 @@ public class MesaService {
         return false;
     }
 
+    // Delete a Mesa
+    public boolean deleteMesaByLogin(Integer id){
+        Mesa mesaToDelete = repository.findByPosicao(id);
+        if(mesaToDelete != null){
+            repository.delete(mesaToDelete);
+            return true;
+        }
+        return false;
+    }
+
     // Read a Mesa
     public Mesa findMesaByID(Long id){
         Optional<Mesa> mesa = repository.findById(id);

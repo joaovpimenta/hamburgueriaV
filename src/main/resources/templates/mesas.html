@@ -2,6 +2,7 @@
 <html lang="en" xmlns:th="">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <title>mesas</title>
     <style id="applicationStylesheet" type="text/css">
 
@@ -16,6 +17,17 @@
 		height: 197px;
 		left: 70px;
 		top: 442px;
+	}
+	#Retngulo_19 {
+		fill: rgba(68,0,0,1);
+	}
+	.Retngulo_19 {
+		position: absolute;
+		overflow: visible;
+		width: 1920px;
+		height: 880px;
+		left: 0px;
+		top: 200px;
 	}
 	#Retngulo_20 {
 		fill: rgba(137,14,26,1);
@@ -33,7 +45,7 @@
 		position: absolute;
 		width: 192px;
 		text-align: left;
-		font-family: Kid Games;
+		font-family: Luckiest Guy;
 		font-style: normal;
 		font-weight: normal;
 		font-size: 40px;
@@ -47,22 +59,22 @@
 		width: 192px;
 		margix: 10px;
 		text-align: left;
-		font-family: Kid Games;
+		font-family: Luckiest Guy;
 		font-style: normal;
 		font-weight: normal;
 		font-size: 40px;
 		color: rgba(215,251,8,1);
 	}
+	.textoDoArthur{
+	}
 	.MESA_01 {
-		position: absolute;
+		position: relative;
 		top: 70px;
 		left: 30px;
 		width: 192px;
-		margix: 10px;
-		text-align: left;
-		font-family: Kid Games;
+		text-align: center;
+		font-family: Luckiest Guy;
 		font-style: normal;
-		font-weight: normal;
 		font-size: 40px;
 		color: rgba(215,251,8,1);
 	}
@@ -105,32 +117,25 @@
     <div id="MESAS">
         <span>MESAS</span>
     </div>
-    <div class="row">
-        <div class="col-sm ml-1  p-3 text-light bg-dark">
-            <th:block th:each="lista : ${lista}">
-                <div class="row" style="border: solid 1px; margin: 10px;">
-                    <div class="Mesa_01" style="top: 448px;">
-                        <svg class="Retngulo_22">
-                            <rect id="Retngulo_22" rx="52" ry="52" x="0" y="0" width="329" height="197">
-                            </rect>
-                        </svg>
-                        <div class="MESA_01">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm ml-1  p-3 text-light bg-dark">
+                <span> Mesas Online:</span>
+                <th:block th:each="lista : ${lista}">
+                        <div class="row">
+                            <div class="MESA_01">
                             MESA <span th:text="${lista.posicao}"></span>
-                        </div>
-                    </div>
-                </div>
-            </th:block>
+                            </div>
+                            </div>
+                </th:block>
+            </div>
         </div>
+        <a href="/tela-login-mesa">
+            <div>
+                <button class="btn btn-dark btn-lg btn-block" type="submit">Sair</button>
+            </div>
+        </a>
     </div>
-    <a href="/tela-login-mesa">
-        <div>
-            <button class="btn btn-dark btn-lg btn-block" type="submit">Sair</button>
-        </div>
-    </a>
-    <svg class="Retngulo_29">
-        <rect id="Retngulo_29" rx="52" ry="52" x="0" y="0" width="329" height="197">
-        </rect>
-    </svg>
 </div>
 </body>
 </html>
