@@ -35,18 +35,30 @@ public class TelaLoginMesa {
 	}
 
 	@PostMapping(value = "/logarmesa")
-	public String fazerLogin(String numero, String senha, ModelMap model){
+	public String fazerLogin(String numero, String senha){
 		System.out.println("Numero: "+numero);
 		System.out.println("Senha: "+senha);
 		Mesa mesa = service.findMesaByLogin(Integer.valueOf(numero));
 		if(mesa != null){
 			if(mesa.getSenha().equals(senha)){
-				ArrayList<Produto> lista = produtoService.findAllProdutos();
-				model.addAttribute("lista",lista);
-				return "/cardapio";
+				mesa.setStatus(true);
+				service.createMesa(mesa);
+				return "/redirect";
 			}
 		}
 		return "redirect:/tela-login-mesa";
+	}
+
+	@GetMapping(value = "/redirect")
+	public String redirectPage(){
+		return "inicio-cardapio";
+	}
+
+	@PostMapping(value = "/redirectbutton")
+	public String redirect(ModelMap model){
+		ArrayList<Produto> lista = produtoService.findAllProdutos();
+		model.addAttribute("lista",lista);
+		return "/cardapio";
 	}
 
 	@GetMapping(value = "/cardapio")
