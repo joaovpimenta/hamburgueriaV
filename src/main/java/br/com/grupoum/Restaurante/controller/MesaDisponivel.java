@@ -20,6 +20,9 @@ public class MesaDisponivel {
 	
 	@GetMapping("/mesas")
 	public String mesaDisponivel(ModelMap model) {
+		if(RestauranteApplication.nivel != 2){
+			return "redirect:/tela-login";
+		}
 		ArrayList<Mesa> lista1 = (ArrayList<Mesa>) service.findAllMesas();
 		ArrayList<Mesa> lista = new ArrayList<>();
 		for(Mesa mesa : lista1){
@@ -35,6 +38,9 @@ public class MesaDisponivel {
 
 	@GetMapping("/funcionario")
 	public String funcionarioDisponivel(ModelMap model) {
+		if(RestauranteApplication.nivel != 1){
+			return "redirect:/tela-login";
+		}
 		ArrayList<Mesa> lista1 = (ArrayList<Mesa>) service.findAllMesas();
 		ArrayList<Mesa> lista = new ArrayList<>();
 		for(Mesa mesa : lista1){
